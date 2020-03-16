@@ -1,17 +1,20 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.11)
 project(Practical3)
 
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+include(FetchContent)
 
 # libigl
+FetchContent_Declare(
+  libigl
+  GIT_REPOSITORY https://github.com/libigl/libigl.git
+  GIT_TAG        e699d257fe860d4fd82709835e72438bd0cd1533
+)
 option(LIBIGL_WITH_OPENGL            "Use OpenGL"         ON)
 option(LIBIGL_WITH_OPENGL_GLFW       "Use GLFW"           ON)
 option(LIBIGL_WITH_VIEWER            "Use OpenGL viewer"  ON)
 option(LIBIGL_WITH_TETGEN            "Use OpenGL viewer"  ON)
 option(LIBIGL_WITH_OPENGL_GLFW_IMGUI  "Use OpenGL viewer with ImGui"  ON)
-
-
-find_package(LIBIGL REQUIRED QUIET)
+FetchContent_MakeAvailable(libigl)
 
 # Add your project files
 file(GLOB SRCFILES *.cpp *.h *.c)
