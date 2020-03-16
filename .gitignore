@@ -343,3 +343,5 @@ build/tetgen/Practical3.build/Release/tetgen.build/Objects-normal/x86_64/tetgen.
 build/tetgen/Release/libtetgen.a
 build/tetgen/tetgen.xcodeproj/project.pbxproj
 build/tetgen/tetgen.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+.idea/
+cmake-build-*/
